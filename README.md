@@ -1,38 +1,3 @@
-# Microcontroller Repo
-
-When opening the Projects in Eclipse it is possible that some includes and variables can not be resolved.
-
-Click the “Providers” tab
-
-In the list of providers, click “CDT Cross GCC Built-in Compiler Settings”. Change “Command to get compiler specs” to
-
-xtensa-esp32-elf-gcc ${FLAGS} -std=c++11 -E -P -v -dD "$INPUTS}".
-
-In the list of providers, click “CDT GCC Build Output Parser” and change the “Compiler command pattern” to
-
-xtensa-esp32-elf-(gcc|g\+\+|c\+\+|cc|cpp|clang)
-
-## For debugging
-
-From Openocd copy
-
-~/esp/openocd-esp32/share/openocd/contrib/99-openocd.rules
-
-to
-
-/etc/udev/rules.d
-
-to start debugger launch
-
-cd ~/esp/openocd-esp32
-bin/openocd -s share/openocd/scripts -f interface/ftdi/esp32_devkitj_v1.cfg -f board/esp-wroom-32.cfg
-
-covert image to baseline:
-
-convert -strip -interlace Plane <image_none_baseline>.jpg <image_baseline>.jpg
-
-image will only work in RGB mode from GIMP
-
 ## Docker
 
 instal docker compose and docker
